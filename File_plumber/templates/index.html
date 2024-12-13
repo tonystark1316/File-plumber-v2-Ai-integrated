@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrueConversion</title>
+    <link rel="stylesheet" href="/static/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <font>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Parkinsans:wght@300..800&display=swap"
+        rel="stylesheet"
+      />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Pacifico&family=Parkinsans:wght@300..800&display=swap"
+        rel="stylesheet"
+      />
+    </font>
+    <font>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Pacifico&family=Parkinsans:wght@300..800&display=swap"
+        rel="stylesheet"
+      />
+    </font>
+    <header class="navbar">
+      <div>
+        <div class="lpos">
+          <a class="logo">
+            <img
+              src="/static/images/logo.png"
+              alt="Logo"
+              width="70"
+              height="70"
+            />
+          </a>
+        </div>
+      </div>
+      <h1 class="app-name">File Plumber</h1>
+      <nav class="relationlinks">
+        <ul>
+          <li class="l1"><a href="/">Home</a></li>
+          <li><a href="/templates/about.html">About</a></li>
+          <li><a href="/templates/contact.html">Contact us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-container">
+      <h4 class="phrase">Convert your files More Easier!!!</h4>
+      <article class="operation">
+        <div class="dropzone">
+          <form
+            id="convert-form"
+            action="/convert"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <h2>File convertor</h2>
+            <input type="file" name="file" required />
+
+            <select name="format" required>
+              <option value="png">PNG</option>
+              <option value="jpg">JPG</option>
+              <option value="jpeg">JPEG</option>
+              <option value="bmp">BMP</option>
+              <option value="pdf">PDF</option>
+              <option value="svg">SVG</option>
+              <option value="ico">ICO</option>
+              <option value="webp">WEBP</option>
+              <option value="gif">GIF</option>
+            </select>
+            <button class="convert-btn" type="submit">Convert</button>
+          </form>
+        </div>
+
+        <div class="bg-removal">
+          <form
+            id="bg-remove-form"
+            action="/remove-bg"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <h2>Remove Image Background</h2>
+            <input type="file" name="file" required />
+            <button class="bg-remove-btn" type="submit">
+              Remove Background
+            </button>
+          </form>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

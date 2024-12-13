@@ -1,0 +1,75 @@
+body {
+  background: url(/templates/bg.png) no-repeat center center fixed;
+  background-size: cover;
+}
+.head {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-left: 5px;
+}
+
+h1 {
+  padding-right: 650px;
+  font-family: "Jaro", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  align-items: start;
+  font-size: 60px;
+  padding-inline-start: 12px;
+}
+h3,
+h5 {
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: center;
+}
+p {
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: center;
+  font-size: smaller;
+  width: 300px;
+}
+.navi img {
+  border: 5px palevioletred;
+  border-radius: 90px;
+  border-style: solid;
+  box-shadow: 20px 20px 50px grey;
+}
+.pavi img {
+  border: 5px palevioletred;
+  border-radius: 90px;
+  border-style: solid;
+  box-shadow: 20px 20px 50px grey;
+}
+.vicky img {
+  border: 5px palevioletred;
+  border-radius: 90px;
+  border-style: solid;
+  box-shadow: 20px 20px 50px grey;
+}
+.relationlinks li {
+  display: inline;
+  padding-left: 30px;
+}
+li a {
+  color: palevioletred;
+  font-family: "Jaro", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+
+article {
+  padding-top: 2cm;
+  display: inline-flex;
+  gap: 90px;
+  padding-left: 50px;
+  padding-right: 50px;
+  line-height: 140%;
+}

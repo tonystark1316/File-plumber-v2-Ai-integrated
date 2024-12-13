@@ -1,0 +1,115 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  background: url("/static/images/bg.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+/* Header Styling */
+.navbar {
+  color: black;
+  display: inline-flex;
+  gap: 5px;
+  align-items: flex;
+}
+
+/* Dropzone */
+.dropzone,
+.bg-removal {
+  margin: 30px auto;
+  padding: 30px;
+  width: 350px;
+  border: 2px solid palevioletred;
+  border-radius: 60px;
+  text-align: center;
+  background: none;
+}
+
+.convert-btn,
+.bg-remove-btn {
+  padding: 20px 30px;
+  margin-top: 15px;
+  color: white;
+  background: palevioletred;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 20px 20px 50px grey;
+}
+.convert-btn:hover,
+.bg-remove-btn:hover {
+  background: pink;
+}
+
+.logo img {
+  display: block;
+  border-radius: 70px;
+}
+.lpos {
+  padding-inline-start: 20px;
+  padding-top: 40px;
+  padding-right: 5px;
+}
+.app-name {
+  font-family: "Jaro", sans-serif;
+  font-size: 60px;
+  text-align: left;
+  padding-right: 250px;
+  display: flex;
+}
+.relationlinks a {
+  font-family: "Yeseva One", serif;
+  font-size: 17px;
+  color: palevioletred;
+
+  display: inline;
+  text-align: end;
+  gap: 18px;
+}
+.relationlinks {
+  padding-top: 50px;
+  gap: 15px;
+}
+
+.main-container {
+  background: none;
+}
+.operation {
+  display: flex;
+  size: 30px;
+}
+
+.phrase {
+  text-align: center;
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 30px;
+  size: 50px;
+}
+
+li {
+  display: inline;
+  gap: 15px;
+  padding-left: 15px;
+}
+
+.l1 {
+  padding-left: 350px;
+}
+
+li a {
+  color: palevioletred;
+  font-family: "Jaro", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  font-size: 40px;
+}
