@@ -1,6 +1,6 @@
 # Welcome to My GitHub Profile 👋
 
-Hi there! I'm **[Your Name]**, a passionate developer focused on creating innovative software solutions. I specialize in **Python**, **web development**, and **software design**, with a keen interest in enhancing user experiences through clean, modern aesthetics.
+Hi there! I'm **Naveendran** (a) **Tonystark**, a passionate developer focused on creating innovative software solutions. I specialize in **Python**, **web development**, and **software design**, with a keen interest in enhancing user experiences through clean, modern aesthetics.
 
 ---
 
