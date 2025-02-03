@@ -1,0 +1,312 @@
+/* General Styling */
+
+body {
+
+  margin: 0;
+
+  font-family: "Pacifico", cursive;
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  background: url("/static/images/bg.png") no-repeat center center fixed;
+
+  background-size: cover;
+
+  color: #333;
+
+}
+
+
+
+.head {
+
+  display: flex;
+
+  justify-content: first baseline;
+
+  align-items: center;
+
+  padding-left: 5px;
+
+}
+
+.logo img {
+
+  display: block;
+
+  border-radius: 70px;
+
+}
+
+
+
+.appname {
+
+  font-family: "Jaro", sans-serif;
+
+  font-size: 60px;
+
+  text-align: left;
+
+  align-items: start;
+
+  padding-left: 30px;
+
+}
+
+.rl {
+
+  padding-left: 500px;
+
+}
+
+
+
+.relationlinks li {
+
+  display: inline;
+
+  padding-left: 30px;
+
+  align-items: end;
+
+}
+
+li a {
+
+  color: palevioletred;
+
+  font-family: "Jaro", serif;
+
+  font-optical-sizing: auto;
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  text-decoration: none;
+
+}
+
+
+
+.converter,
+
+.bg-removal,
+
+.upscaler {
+
+  margin: 30px auto;
+
+  padding: 30px;
+
+  width: 350px;
+
+  border-radius: 60px;
+
+  text-align: center;
+
+  background-color: rgba(245, 245, 245, 0.304);
+
+  backdrop-filter: blur(8px);
+
+  box-shadow: 20px 20px 50px grey;
+
+}
+
+
+
+.convert-btn,
+
+.bg-remove-btn,
+
+.upscale-btn {
+
+  padding: 20px 20px;
+
+  margin-top: 15px;
+
+  color: white;
+
+  background: palevioletred;
+
+  border: none;
+
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  font-family: "Jaro", sans-serif;
+
+  font-size: 14px;
+
+}
+
+
+
+.convert-btn:hover,
+
+.bg-remove-btn:hover,
+
+.upscale-btn:hover {
+
+  background: pink;
+
+}
+
+
+
+.convert-btn {
+
+  padding-left: 55px;
+
+  padding-right: 55px;
+
+}
+
+
+
+.con-items {
+
+  display: inline;
+
+}
+
+
+
+.main-container {
+
+  background: none;
+
+}
+
+.operation {
+
+  display: flex;
+
+}
+
+
+
+.phrase {
+
+  text-align: center;
+
+  font-size: 60px;
+
+}
+
+h1 {
+
+  font-family: "Jaro", serif;
+
+}
+
+
+
+h2 {
+
+  font-size: 26px;
+
+  font-family: "LEMON MILK", sans-serif;
+
+  padding-bottom: 1.5cm;
+
+}
+
+
+
+label input[type="file"] {
+
+  display: none;
+
+}
+
+
+
+label span {
+
+  padding: 10px;
+
+  justify-items: center;
+
+  color: white;
+
+  background: palevioletred;
+
+  border: none;
+
+  border-radius: 40px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  font-family: "lato", serif;
+
+  font-size: 13px;
+
+}
+
+
+
+label span:hover {
+
+  background: pink;
+
+}
+
+
+
+.upscaler input[type="number"] {
+
+  width: 80%;
+
+  padding: 10px;
+
+  margin: 15px 0;
+
+  border: 1px solid palevioletred;
+
+  border-radius: 30px;
+
+  font-size: 16px;
+
+  text-align: center;
+
+  font-family: "Quicksand", sans-serif;
+
+}
+
+
+
+.upscaler input[type="number"]:focus {
+
+  outline: none;
+
+  border-color: pink;
+
+}
+
+.uplabel {
+
+  font-family: "lato", serif;
+
+  font-size: 13px;
+
+  padding-top: 12px;
+
+}
+
+.bg-btn-od {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
