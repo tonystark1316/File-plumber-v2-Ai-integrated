@@ -47,7 +47,7 @@ A versatile file conversion web app featuring:
 
 ## 📬 Connect with Me
 - **LinkedIn**: [Your LinkedIn](https://www.linkedin.com/in/yourusername)
-- **Email**: [naveen1010ts@gmail.com](naveen1010ts@gmail.com)
+- **Email**: [naveen1010ts@gmail.com](mailto:naveen1010ts@gmail.com)
 
 ---
 
