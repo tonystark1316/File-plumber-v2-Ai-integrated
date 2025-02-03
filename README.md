@@ -56,5 +56,5 @@ A versatile file conversion web app featuring:
 ---
 
 <!-- Badges Section for extra aesthetic touch -->
-[![GitHub followers](https://img.shields.io/github/followers/yourusername?label=Follow&style=social)](https://github.com/yourusername)
-[![Twitter Follow](https://img.shields.io/twitter/follow/yourusername?style=social)](https://twitter.com/yourusername)
+[![GitHub followers](https://img.shields.io/github/followers/tonystark1316?label=Follow&style=social)](https://github.com/tonystark1316)
+[![Twitter Follow](https://img.shields.io/twitter/follow/tonystark_ind?style=social)](https://x.com/tonystark_ind)
