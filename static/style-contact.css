@@ -1,0 +1,204 @@
+body {
+  background: url(/static/images/bg.png) no-repeat center center fixed;
+  background-size: cover;
+}
+.head {
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-left: 5px;
+}
+
+h1 {
+  padding-right: 650px;
+  font-family: "Jaro", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  align-items: start;
+  font-size: 60px;
+  padding-inline-start: 12px;
+}
+h3,
+h5 {
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: center;
+}
+p {
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: center;
+  font-size: smaller;
+  width: 300px;
+}
+
+.relationlinks li {
+  display: inline;
+  padding-left: 30px;
+}
+li a {
+  color: palevioletred;
+  font-family: "Jaro", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+  max-height: 600px;
+  max-width: 1200px;
+  min-height: 600px;
+  min-width: 1100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+.panel {
+  height: 270px;
+  width: 190px;
+  position: relative;
+}
+.panel:hover .card {
+  filter: blur(1.5px);
+}
+.panel:hover .card1 {
+  background-size: 115% 115%;
+}
+.panel:hover .card2 {
+  background-size: 115% 115%;
+}
+.panel:hover .card3 {
+  background-size: 115% 115%;
+}
+.panel:hover .title {
+  color: rgba(255, 255, 255, 0.2);
+}
+.panel:hover .border {
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+.panel:hover .slide {
+  bottom: 0px;
+}
+.panel:hover .ring:before,
+.panel:hover .ring:after {
+  transform: translateX(-50%) translateY(-50%) rotate(310deg);
+}
+.ring,
+.card,
+.border,
+.slide,
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ring {
+  color: #fffbf1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 185px;
+}
+.card {
+  background: #f0ead6;
+  position: relative;
+  transition: all 1s;
+  height: 10cm;
+  width: 7cm;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 40px;
+}
+.card1 {
+  background-image: url("/static/images/pavi-prof.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.card2 {
+  background-image: url("/static/images/nav-prof.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.card3 {
+  background-image: url("/static/images/vicky-prof.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.ring:before,
+.ring:after {
+  content: "";
+  padding: 0.7em 0.4em;
+  position: absolute;
+  left: 50%;
+  width: 115%;
+  top: 50%;
+  display: block;
+  border: 5px solid #50c9c3;
+  border-radius: 50%;
+  transition: transform 1s;
+  transform: translateX(-50%) translateY(-50%) rotate(50deg);
+}
+.ring:before {
+  border-color: palevioletred palevioletred rgba(211, 53, 140, 0)
+    rgba(0, 0, 0, 0);
+  z-index: -1;
+}
+.ring:after {
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) palevioletred palevioletred;
+}
+p {
+  text-align: center;
+  position: absolute;
+  font-family: "Playfair Display";
+}
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  transition: all 1s;
+  top: 0;
+  color: rgb(255, 255, 255);
+  font-family: "LEMON MILK", sans-serif;
+
+  padding-top: 260px;
+}
+.para {
+  bottom: 0;
+  font-size: 11px;
+  font-family: "LEMON MILK", sans-serif;
+
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+}
+.border {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  height: 9cm;
+  width: 6cm;
+  transition: border 1s;
+  overflow: hidden;
+  border-radius: 40px;
+}
+.slide {
+  height: 9cm;
+  width: 6cm;
+  position: absolute;
+  border: 1px solid black;
+  bottom: -350px;
+  background: rgba(0, 0, 0, 0.5);
+  transition: bottom 1s;
+  flex-direction: column;
+}
+.fa-plane {
+  font-size: 16px;
+}
+article {
+  display: flex;
+  justify-items: center;
+}
