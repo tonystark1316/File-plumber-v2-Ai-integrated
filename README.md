@@ -17,18 +17,6 @@ A versatile file conversion web app featuring:
 - Frontend: **HTML**, **CSS**  
 - **Current Updates**: Adding more file extension options, improving aesthetics, and optimizing backend functionality.
 
----
-
-### [**Mobile Service Query System**](https://github.com/YourUsername/MobileServiceQuery)
-A **Flask**-powered system designed to manage customer service queries:
-- **Features**: Collect customer details (e.g., name, issue, location) and save them to a **JSON** file.
-- **Planned Features**: Advanced form interactions, additional data filters, and a more interactive UI.
-
-**Tech Stack**:  
-- Backend: **Python (Flask)**  
-- Frontend: **HTML**, **CSS**
-
----
 
 ## 💻 Technologies & Tools I Work With
 
