@@ -53,11 +53,9 @@ protobuf==5.29.1
 PyMatting==1.1.13
 pyparsing==3.2.0
 PyPDF2==3.0.1
-pypiwin32==223
 pyreadline3==3.5.4
 python-dateutil==2.9.0.post0
-pyttsx3==2.98
-pywin32==308
+pyttsx3==2.90  # Downgraded for better compatibility
 PyYAML==6.0.2
 react==4.3.0
 realesrgan==0.3.0
