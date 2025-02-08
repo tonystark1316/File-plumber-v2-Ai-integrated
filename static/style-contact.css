@@ -169,16 +169,13 @@ p {
   transition: all 1s;
   top: 0;
   color: rgb(185, 0, 0);
-
   font-family: "Smooch Sans", serif;
-
   padding-top: 260px;
 }
 .para {
   bottom: 0;
   font-size: 16px;
   font-family: "Smooch Sans", serif;
-
   padding: 10px;
   margin: 0;
   text-align: center;
@@ -209,7 +206,6 @@ article {
   display: flex;
   justify-items: center;
 }
-
 .p-link {
   padding-left: 170px;
 }
