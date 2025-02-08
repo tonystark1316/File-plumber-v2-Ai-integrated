@@ -1,0 +1,182 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: "Smooch Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  background: url("/static/images/bg.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.head {
+  display: flex;
+  justify-content: first baseline;
+  align-items: center;
+  padding-left: 1px;
+}
+
+.logo img {
+  display: block;
+  border-radius: 70px;
+}
+
+.appname {
+  font-family: "Smooch Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  text-align: left;
+  align-items: start;
+  padding-left: 5px;
+  color: rgb(236, 236, 236);
+}
+
+.rl {
+  padding-left: 750px;
+}
+
+.relationlinks li {
+  display: inline;
+  padding-left: 25px;
+  align-items: end;
+}
+
+li a {
+  color: rgb(255, 255, 255);
+  font-family: "Smooch Sans", serif;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.converter,
+.bg-removal,
+.upscaler {
+  margin: 30px auto;
+  padding: 30px;
+  width: 350px;
+  border-radius: 60px;
+  text-align: center;
+  background-color: rgba(55, 54, 54, 0.523);
+  backdrop-filter: blur(8px);
+  box-shadow: 20px 20px 50px rgb(23, 23, 23);
+}
+
+.convert-btn,
+.bg-remove-btn,
+.upscale-btn {
+  padding: 20px 20px;
+  margin-top: 15px;
+  color: white;
+  background: rgb(175, 9, 36);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Smooch Sans", serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.convert-btn:hover,
+.bg-remove-btn:hover,
+.upscale-btn:hover {
+  background: rgb(0, 0, 0);
+}
+
+/* File Upload Styling */
+.file-upload {
+  display: flex;
+  align-items: center;
+  width: 5cm;
+  border: 2px solid #181818;
+  border-radius: 20px;
+  padding: 5px;
+  background: #181818;
+  font-family: "Smooch Sans", serif;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.file-name {
+  flex-grow: 1;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #dbd6d6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-upload label {
+  background: rgb(175, 9, 36);
+  color: #dbd6d6;
+  padding: 8px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Smooch Sans", serif;
+}
+
+.file-upload label:hover {
+  background: #181818;
+  color: rgb(175, 9, 36);
+}
+.operation {
+  display: flex;
+}
+
+.phrase {
+  font-family: "Smooch Sans", serif;
+  font-weight: normal;
+  font-size: 1.5cm;
+  background: linear-gradient(90deg, #f1f1f1 0%, #232323 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left: 10px;
+}
+.switch {
+  border-radius: 20px;
+  height: 40px;
+  width: 80px;
+  font-family: "Smooch Sans", serif;
+  text-align: center;
+  background-color: #181818;
+  color: rgb(175, 9, 36);
+  font-size: medium;
+  font-weight: bold;
+  margin-left: 5px;
+  height: auto;
+  border: 2px solid #181818;
+}
+.conv-con {
+  display: flex;
+  padding-left: 0.9cm;
+}
+
+.bg-con {
+  padding-left: 1.9cm;
+}
+.up-con {
+  padding-left: 1.9cm;
+}
+
+.bg-rem-head {
+  font-family: "Smooch Sans", serif;
+  font-size: 40px;
+  background: linear-gradient(90deg, #f1f1f1 0%, #232323 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.uplabel {
+  font-family: "Smooch Sans", serif;
+  font-size: 20px;
+  color: rgb(175, 9, 36);
+}
+.fac-perc {
+  background-color: rgb(175, 9, 36);
+  border-radius: 20px;
+  padding-left: 10px;
+}
