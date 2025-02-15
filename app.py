@@ -1,59 +1,41 @@
+import os
 from flask import Flask, render_template, request, send_file
 from PIL import Image
-import os
-from rembg import remove
-import cv2
 import torch
+import cv2
 import numpy as np
 from realesrgan import RealESRGANer
-from basicsr.archs.rrdbnet_arch import RRDBNet  # Required for loading ESRGAN model
+from rembg import remove
 
 app = Flask(__name__)
+
 UPLOAD_FOLDER = 'uploads'
 MODEL_FOLDER = 'models'
-MODEL_PATH = os.path.abspath(os.path.join(MODEL_FOLDER, "realesrgan-x4plus.pth"))
 
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
+# Create necessary directories
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-# Load the ESRGAN model correctly
+# Disable gradients to save RAM
+torch.set_grad_enabled(False)
+
+# Load the ESRGAN general model with optimizations
 def load_esrgan_model(model_path):
-    model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64, num_block=23, num_grow_ch=32, scale=4)
-    
-    # Load the model file and fix any key mismatches
-    state_dict = torch.load(model_path, map_location=torch.device('cpu'))
-    
-    # Some pre-trained models have 'params_ema', check if we need to extract it
-    if "params_ema" in state_dict:
-        state_dict = state_dict["params_ema"]
-    
-    model.load_state_dict(state_dict, strict=False)  # strict=False to avoid missing keys issue
-
-    upsampler = RealESRGANer(
-        scale=4,
+    return RealESRGANer(
+        scale=2,  # Use 2x instead of 4x to reduce memory usage
         model_path=model_path,
-        model=model,
-        tile=0,
+        model=None,
+        tile=512,  # Process images in 512x512 chunks to reduce RAM spikes
         tile_pad=10,
         pre_pad=0,
-        half=False
+        half=True  # Use FP16 (half precision) to reduce RAM usage by 50%
     )
-    return upsampler
 
-# Initialize the general ESRGAN model
-general_model = load_esrgan_model(MODEL_PATH)
+# Initialize the ESRGAN model
+general_model = load_esrgan_model(os.path.join(MODEL_FOLDER, "realesrgan-x2plus.pth"))
 
 @app.route('/')
 def index():
     return render_template('index.html')
-
-@app.route('/templates/about.html')
-def about():
-    return render_template('about.html')
-
-@app.route('/templates/contact.html')
-def contact():
-    return render_template('contact.html')
 
 @app.route('/convert', methods=['POST'])
 def convert():
@@ -62,15 +44,13 @@ def convert():
     file_path = os.path.join(UPLOAD_FOLDER, file.filename)
     file.save(file_path)
 
+    # Output path
     output_path = os.path.join(UPLOAD_FOLDER, f"converted.{target_format}")
-    if target_format in ['png', 'jpg', 'jpeg', 'bmp', 'webp', 'ico', 'gif']:
-        img = Image.open(file_path)
-        img.save(output_path, format=target_format.upper())
-    elif target_format == 'pdf':
-        img = Image.open(file_path).convert("RGB")
-        img.save(output_path, "PDF")
-    else:
-        return "Unsupported format. SVG conversion is not implemented."
+
+    # Convert image format
+    img = Image.open(file_path)
+    img.save(output_path, format=target_format.upper())
+
     return send_file(output_path, as_attachment=True)
 
 @app.route('/remove-bg', methods=['POST'])
@@ -80,6 +60,7 @@ def remove_bg():
     file.save(file_path)
 
     try:
+        # Background removal
         with open(file_path, "rb") as input_file:
             output = remove(input_file.read())
 
@@ -99,12 +80,19 @@ def upscale():
     file.save(file_path)
 
     try:
+        # Load the image
         img = cv2.imread(file_path, cv2.IMREAD_UNCHANGED)
         if img is None:
             return "Failed to load the image."
 
+        # Resize image before processing to prevent memory spikes
+        MAX_SIZE = (1920, 1080)  # Limit input image size to 1080p
+        img = cv2.resize(img, MAX_SIZE, interpolation=cv2.INTER_AREA)
+
+        # Upscale the image using ESRGAN
         output, _ = general_model.enhance(img, outscale=upscale_factor)
 
+        # Save the upscaled image
         output_path = os.path.join(UPLOAD_FOLDER, "upscaled.png")
         cv2.imwrite(output_path, output)
 
@@ -112,5 +100,6 @@ def upscale():
     except Exception as e:
         return f"An error occurred during upscaling: {e}"
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))  # Use Render's assigned port
+    app.run(host="0.0.0.0", port=port, debug=False, threaded=True)
