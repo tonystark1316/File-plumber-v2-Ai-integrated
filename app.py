@@ -25,16 +25,14 @@ class CompactNet(torch.nn.Module):
         # Define forward pass (Needs actual implementation)
         return x
 
-# Load the smbss-2x model
+# Function to load model on demand (to reduce memory usage)
 def load_smbss_model(model_path):
     model = CompactNet()
     state_dict = torch.load(model_path, map_location=torch.device('cpu'))
     model.load_state_dict(state_dict, strict=False)
     model.eval()
+    torch.cuda.empty_cache()  # Free memory
     return model
-
-# Initialize the smbss-2x model
-smbss_model = load_smbss_model(MODEL_PATH)
 
 @app.route('/')
 def index():
@@ -46,7 +44,7 @@ def convert():
     target_format = request.form['format']
     file_path = os.path.join(UPLOAD_FOLDER, file.filename)
     file.save(file_path)
-    
+
     output_path = os.path.join(UPLOAD_FOLDER, f"converted.{target_format}")
     if target_format in ['png', 'jpg', 'jpeg', 'bmp', 'webp', 'ico', 'gif']:
         img = Image.open(file_path)
@@ -63,7 +61,7 @@ def remove_bg():
     file = request.files['file']
     file_path = os.path.join(UPLOAD_FOLDER, file.filename)
     file.save(file_path)
-    
+
     try:
         with open(file_path, "rb") as input_file:
             output = remove(input_file.read())
@@ -79,23 +77,27 @@ def upscale():
     file = request.files['file']
     file_path = os.path.join(UPLOAD_FOLDER, file.filename)
     file.save(file_path)
-    
+
     try:
         img = cv2.imread(file_path, cv2.IMREAD_UNCHANGED)
         if img is None:
             return "Failed to load the image."
 
+        smbss_model = load_smbss_model(MODEL_PATH)  # Load model only when needed
+
         # Preprocess image for model
-        input_tensor = preprocess_image(img)
-        
+        input_tensor = preprocess_image(img).half()  # Use half precision
+
         with torch.no_grad():
             output_tensor = smbss_model(input_tensor)
-        
+
         output_image = postprocess_tensor(output_tensor)
-        
+
         output_path = os.path.join(UPLOAD_FOLDER, "upscaled.png")
         cv2.imwrite(output_path, output_image)
-        
+
+        torch.cuda.empty_cache()  # Free memory
+
         return send_file(output_path, as_attachment=True)
     except Exception as e:
         return f"An error occurred during upscaling: {e}"
@@ -109,5 +111,5 @@ def postprocess_tensor(tensor):
     return tensor.squeeze(0).numpy().astype(np.uint8)
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Get PORT from Render environment
+    app.run(host="0.0.0.0", port=port, debug=True)
