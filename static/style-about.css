@@ -1,14 +1,80 @@
 body {
-  background: url(/static/images/bg.png) no-repeat center center fixed;
+  margin: 0;
+  font-family: "Smooch Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  background: url("/static/images/bg.png") no-repeat center center fixed;
   background-size: cover;
   backdrop-filter: blur(8px);
 }
+
+/* Header Layout */
 .head {
   display: flex;
-  justify-content: first baseline;
+  justify-content: space-between;
   align-items: center;
-  padding-left: 5px;
 }
+
+/* Left Section (Logo + App Name) */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and app name */
+}
+
+.logo img {
+  display: block;
+  border-radius: 70px;
+}
+
+.appname {
+  font-family: "Smooch Sans", serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: rgb(236, 236, 236);
+  margin: 0; /* Remove default margin */
+}
+
+/* Navigation Links */
+.rl {
+  display: flex;
+}
+
+.relationlinks {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px; /* Space between navigation links */
+  font-size: 1.3rem;
+  justify-content: flex-end;
+}
+
+.relationlinks li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 2 rem;
+  transition: color 0.3s ease;
+}
+
+.relationlinks li a:hover {
+  color: rgb(175, 9, 36); /* Highlight color on hover */
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: rgb(0, 0, 0);
+  margin: 4px 0;
+}
+
 h1 {
   padding-right: 500px;
   font-family: "Smooch Sans", serif;
@@ -42,12 +108,7 @@ article p {
   color: #f1f1f1;
   font-family: "Smooch Sans", serif;
 }
-.relationlinks li {
-  display: inline;
-  padding-left: 30px;
-  text-decoration: bold;
-  font-size: 21.5px;
-}
+
 .tag1 {
   padding-left: 7cm;
 }
@@ -78,4 +139,37 @@ h5 {
   line-height: 160%;
   color: #f1f1f1;
   font-family: "Smooch Sans", serif;
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .head {
+    flex-wrap: wrap; /* Allow wrapping for mobile */
+  }
+
+  .operation {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rl {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.8); /* Background for mobile nav */
+    padding: 10px;
+  }
+
+  .rl.active {
+    display: flex;
+  }
+
+  .relationlinks {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
