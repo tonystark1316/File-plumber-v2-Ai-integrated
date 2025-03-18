@@ -1,6 +1,6 @@
 # File Plumber v2 (AI Integrated)
 
-![File Plumber AI Logo](https://your-image-url.com)  
+![File Plumber AI Logo](https://github.com/tonystark1316/File-plumber-v2-Ai-integrated/blob/main/uploads/Screenshot%202025-03-18%20215246.png)  
 *An advanced file conversion tool powered by AI* 🚀
 
 ## 📝 Overview
