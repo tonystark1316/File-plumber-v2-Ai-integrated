@@ -43,6 +43,7 @@ python app.py
 Now, open `http://127.0.0.1:5000/` in your browser.
 
 ## 🖼️ Screenshots
+![File Plumber Home](https://github.com/tonystark1316/File-plumber-v2-Ai-integrated/blob/main/uploads/Screenshot%202025-03-18%20220832.png) 
 *(Add screenshots of the UI here for better visualization)*
 
 ## 🔗 Contributing
