@@ -5,34 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>File Plumber</title>
     <link rel="stylesheet" href="/static/style.css" />
-    <font>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Pacifico&family=Parkinsans:wght@300..800&display=swap"
-        rel="stylesheet"
-      />
-      <link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
-        rel="stylesheet"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap"
-        rel="stylesheet"
-      />
-    </font>
-  </head>
-  <body>
+    <!-- Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Pacifico&family=Parkinsans:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <header class="head">
+      <!-- Logo and App Name on the Left -->
       <div class="left-section">
         <a class="logo">
           <img
@@ -44,7 +38,15 @@
         </a>
         <h1 class="appname">File Plumber</h1>
       </div>
-
+    
+      <!-- Hamburger Menu for Mobile -->
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    
+      <!-- Navigation Links on the Right -->
       <nav class="rl">
         <ul class="relationlinks">
           <li><a href="/">Home</a></li>
@@ -173,6 +175,14 @@
           input.files.length > 0 ? input.files[0].name : "No file chosen";
         input.nextElementSibling.textContent = fileName;
       }
+
+      // Hamburger Menu Toggle
+      const hamburger = document.querySelector(".hamburger");
+      const nav = document.querySelector(".rl");
+
+      hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
     </script>
   </body>
 </html>
